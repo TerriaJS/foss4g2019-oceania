@@ -19,7 +19,7 @@
             url: "#"
         },
         */
-         
+
         // Pop-up disclaimer that will be shown at the start
         // The text of the disclaimer is in lib/Views/GlobalDisclaimer.html
         // globalDisclaimer: {
@@ -32,7 +32,7 @@
         //     //devHostRegex: "\\b(staging|preview|test|dev)\\.",
         //     enableOnLocalhost: true // If false, don't show this when running on localhost
         // },
-        
+
         /*
         developerAttribution: {
             text: "Your organisation",
@@ -45,7 +45,8 @@
         brandBarElements: [
             "",
             "<a target=\"_blank\" href=\"https://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
-            ""
+            "",
+            '<img src="images/2019.png" style="width: 235px; padding-left:9px"/>'
         ],
         // Shown when things go wrong.
         supportEmail: "help@example.com",
