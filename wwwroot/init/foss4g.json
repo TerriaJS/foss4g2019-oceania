@@ -1,0 +1,17 @@
+{
+    "homeCamera": {
+      "north": 68,
+      "east": 49,
+      "south": 36,
+      "west": -20
+    },
+    "catalog": [
+        {
+          "type": "gtfs",
+          "url": "http://gtfs.ovapi.nl/nl/vehiclePositions.pb",
+          "name": "Netherlands Live Transport - Buses",
+          "refreshInterval": 15
+        }
+    ]
+  }
+  
