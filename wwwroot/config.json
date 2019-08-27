@@ -61,9 +61,9 @@
         // Enable experimental features, since its nice to have the bleeding edge.
         // Disable it if things go wrong with the experimental features or your users aren't robust to features which might change or disapear completly.
         "experimentalFeatures": true,
-        proxyableDomainsUrl: "https://map.terria.io/proxyabledomains/",
-        corsProxyBaseUrl: "https://map.terria.io/proxy/",
-        shareUrl: "https://map.terria.io/share/"
+        shareUrl: "https://map.terria.io/share/",
+        //corsProxyBaseUrl: "https://map.terria.io/proxy/",
+        //proxyableDomainsUrl: "https://map.terria.io/proxyabledomains/",
     }
 }
 
