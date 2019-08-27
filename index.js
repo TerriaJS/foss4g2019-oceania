@@ -35,6 +35,7 @@ import Cesium3DTilesCatalogItem from "terriajs/lib/Models/Cesium3DTilesCatalogIt
 import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBaseMapOptions';
 import GtfsCatalogItem from 'terriajs/lib/Models/GtfsCatalogItem';
 import CesiumTerrainProviderCatalogItem from 'terriajs/lib/Models/CesiumTerrainCatalogItem';
+import { autorun, reaction, runInAction } from 'mobx';
 
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
@@ -79,14 +80,23 @@ if (process.env.NODE_ENV !== "production" && module.hot) {
     document.styleSheets[0].disabled = true;
 }
 
+const shareDataService = new ShareDataService({
+  terria: terria
+});
+
+// Quick fix to sharing via remote server
+reaction(() => terria.configParameters.shareUrl, shareUrl => {
+  runInAction(() => {
+    shareDataService.url = shareUrl;
+  });
+});
+
 module.exports = terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
     // as well as the call to "updateApplicationOnHashChange" further down.
     applicationUrl: window.location,
     configUrl: 'config.json',
-    shareDataService: new ShareDataService({
-        terria: terria
-    })
+    shareDataService
 }).catch(function(e) {
     raiseErrorToUser(terria, e);
 }).finally(function() {
