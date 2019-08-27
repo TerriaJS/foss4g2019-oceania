@@ -26,27 +26,29 @@ module.exports = function(devMode, hot) {
                     loader: 'raw-loader'
                 },
                 {
-                    test: /\.(ts|js)x$/,
+                    test: /\.(js|jsx)$/,
                     include: [
                         path.resolve(__dirname, '..', 'index.js'),
                         path.resolve(__dirname, '..', 'entry.js'),
                         path.resolve(__dirname, '..', 'lib')
-                        
+
                     ],
-                    use: [
-                        {
-                        loader: 'babel-loader',
-                            options: {
-                                sourceMap: false, // generated sourcemaps are currently bad, see https://phabricator.babeljs.io/T7257
-                                presets: ['@babel/preset-env', '@babel/preset-react'],
-                                plugins: [
-                                    'babel-plugin-jsx-control-statements',
-                                    '@babel/plugin-transform-modules-commonjs'
-                                    ]
-                            }
-                        },
-                        require.resolve('ts-loader')
-                    ]
+                    loader: 'babel-loader',
+                    options: {
+                        sourceMap: false, // generated sourcemaps are currently bad, see https://phabricator.babeljs.io/T7257
+                        presets: ['@babel/preset-env', '@babel/preset-react'],
+                        plugins: [
+                            'babel-plugin-jsx-control-statements',
+                            '@babel/plugin-transform-modules-commonjs'
+                        ]
+                    }
+                },
+                {
+                    test: /\.tsx?$/,
+                    include: [
+                        path.resolve(__dirname, '..', 'lib')
+                    ],
+                    loader: "ts-loader"
                 },
                 {
                     test: /\.(png|jpg|svg|gif)$/,
@@ -101,7 +103,7 @@ module.exports = function(devMode, hot) {
                         'resolve-url-loader?sourceMap',
                         'sass-loader?sourceMap'
                     ]
-                }
+                },
             ]
         },
         plugins: [

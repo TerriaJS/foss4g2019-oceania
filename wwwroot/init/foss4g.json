@@ -21,7 +21,17 @@
               "content": "[Creative Commons CCZero](https://opendefinition.org/licenses/cc-zero/)"
             }
           ]
+        },
+        {
+          "type": "image",
+          "name": "FOSS4G Logo",
+          "url": "images/2019.png",
+          "rectangle": {
+            "west": 18.0,
+            "south": 40.0,
+            "east": 34.0,
+            "north": 44.0
+          }
         }
     ]
   }
-  
