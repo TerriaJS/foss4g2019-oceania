@@ -71,8 +71,6 @@ CatalogMemberFactory.register(Cesium3DTilesCatalogItem.type, Cesium3DTilesCatalo
 CatalogMemberFactory.register(GtfsCatalogItem.type, GtfsCatalogItem);
 CatalogMemberFactory.register(CesiumTerrainProviderCatalogItem.type, CesiumTerrainProviderCatalogItem);
 
-CatalogMemberFactory.register(ImageCatalogItem.type, ImageCatalogItem);
-
 if (process.env.NODE_ENV === "development") {
     window.viewState = viewState;
 }
