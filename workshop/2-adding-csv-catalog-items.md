@@ -32,13 +32,26 @@ Terria can automatically map data to regions to make choropleth maps. It uses co
       "west": -20
     },
     "catalog": [
-    	{
-      	"name": "Production of cheese (in 1000s t)",
-        "type": "csv",
-        
-        // can be a website url, or a path to a file in the wwwroot directory of the map
-       	"url": "data/cheese_production.csv"
-    	}
+        {
+          "name": "Production of cheese (in 1000s t)",
+          "type": "csv",
+          
+          // can be a website url, or a path to a file in the wwwroot directory of the map
+           "url": "data/cheese_production.csv",
+  
+           // These will appear in the catalog item's description. `name` specifies the heading, and `content` the content.
+           "info": [
+             {
+              "name": "Attribution",
+              "content": "Data sourced from the [EU Open Data Portal](http://data.europa.eu/euodp/en/data/dataset/ZWo26z1CgQTGQMwte8QVBQ)"
+             },
+             {
+               "name": "License",
+               "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)"
+             }
+  
+           ]
+        }
     ]
 }
 ```
@@ -52,11 +65,12 @@ Hit save, and open your map in a browser. You should be able to see your new cat
    The new catalog item looks like this:
 
    ```json
-   // ...the rest of foss4g.json ommitted for brevity
+   // ...the rest of foss4g.json omitted for brevity
    {
      "name": "Production of cheese (in 1000s t)",
      "type": "csv",
      "url": "data/cheese_production.csv",
+     /// ... attribution info omitted for brevity
      "defaultStyle": {
        "color": {
          "binMaximums": [
@@ -86,6 +100,7 @@ Hit save, and open your map in a browser. You should be able to see your new cat
   "name": "Production of cheese (in 1000s t)",
   "type": "csv",
   "url": "data/better_cheese.csv",
+  /// ... attribution info omitted for brevity
   "defaultStyle": {
     "color": {
       "binMaximums": [
@@ -110,7 +125,16 @@ Hit save, and open your map in a browser. You should be able to see your new cat
 
 5. Terria can also be used to display point data. Have a look at `wwwroot/data/whs.csv` to look at a table detailing the names and locations UNESCO World Heritage Sites. Notice that it has `latitude` and `longitude` columns-- Terria automatically recognises these and uses them to place points on the map. Each row in the table becomes a point on the map.
 
-Add `world_heritage_sites.csv` to the catalog just like you did for the cheese production data, with a name, type and url.
+Add `world_heritage_sites.csv` to the catalog just like you did for the cheese production data, with a name, type and url. The attribution information is as follows:
+
+```json
+  "info": [
+    {
+    "name": "Attribution",
+    "content": "Data sourced from [UNESCO](http://whc.unesco.org/en/list/?mode=table&)"
+    }
+  ]
+```
 
 6. You'll notice that the style selector in the workbench will let you select "short_description_en" as a map style, which is not particularly helpful. If you add
 
@@ -140,7 +164,8 @@ The content in `{{column_name}}` will be replaced by the value in `column_name` 
 - [EU Open Data Portal](https://data.europa.eu/euodp/en/home)
 - Australia's [data.gov.au](https://data.gov.au/)
 - The UK's [data.gov.uk](https://data.gov.uk/)
-You might need to rename some of the columns for Terria to interpret them correctly, let us know if you need any help and refer to [here](https://github.com/TerriaJS/nationalmap/wiki/csv-geo-au).
+- [Datahub](https://datahub.io/)
+You might need to rename some of the columns for Terria to interpret them correctly. For point data, you need `latitude` and `longitude` columns, and for region mapped data (per country) you need a `cnt2` or `cnt3` column with a 2 or 3 letter country code.
 
 9. Use the Stories feature of TerriaJS to make a Story about your dataset, highlighting the parts that you find the most interesting. There's an instruction video in the app that walks you through the process.
 
