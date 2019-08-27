@@ -12,7 +12,7 @@ Open a shell and run:
 
 ```
 cd foss4g2019
-npm install && npm run gulp && npm start
+npm install && npm run gulp build && npm start
 ```
 
 Then navigate to `http://localhost:3001` and you should see your map!
