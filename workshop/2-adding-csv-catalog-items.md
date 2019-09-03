@@ -101,7 +101,7 @@ Hit save, and open your map in a browser. You should be able to see your new cat
 {
   "name": "Production of cheese (in 1000s t)",
   "type": "csv",
-  "url": "data/better_cheese.csv",
+  "url": "data/cheese_production.csv",
   /// ... attribution info omitted for brevity
   "defaultStyle": {
     "color": {
