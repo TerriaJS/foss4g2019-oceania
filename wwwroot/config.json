@@ -45,8 +45,7 @@
         brandBarElements: [
             "",
             "<a target=\"_blank\" href=\"https://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
-            "",
-            "<h3>FOSS4G 2019 - Oceania</h3>"
+            " ",
         ],
         // Shown when things go wrong.
         supportEmail: "help@example.com",
@@ -64,6 +63,7 @@
         shareUrl: "https://map.terria.io/share/",
         //corsProxyBaseUrl: "https://map.terria.io/proxy/",
         //proxyableDomainsUrl: "https://map.terria.io/proxyabledomains/",
+        "cesiumIonAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIwMzJhNTk5NS1lMTc5LTQ0MWMtYTc3Mi1lZmE3NjYyZWMwMzAiLCJpZCI6MjU5LCJzY29wZXMiOlsiYXNyIiwiZ2MiXSwiaWF0IjoxNTY5OTMyNDcwfQ.ifTZn9zZ4Tc3UD6yqH8yqwyU-8OgFQN2cqno6HmxWGw" // Cesium's default Ion key for workshop demonstration only. Expires in a couple of months
     }
 }
 
