@@ -66,21 +66,3 @@ Cesium gives Terria the capability to visualise many types of 3D content includi
 ```
 
 You can adjust the position of the model and orient the axes of the model with config options.
-
-# Adding a WPS layer
-
-Terria also supports [Web Processing Service](https://en.wikipedia.org/wiki/Web_Processing_Service) layers. Try the following example from GeoGLAM:
-
-```json
-{
-          "name": "GeoGLAM Vegetation Cover",
-          "url": "http://gsky.nci.org.au/ows/geoglam",
-          "type": "wps",
-          "identifier": "geometryDrill",
-          "description": "This function can be used to query the Vegetation Fractional Cover layer data. The output is a graph which includes NPV, PV, NPV+PV Total, BS, and Precipitation. ",
-}
-```
-
-Now make a layer for `http://climatemap.duckdns.org:5000/wps` that uses the indentifier `tempthresh`. This will allow you to visualise the number of days where the temperature in a region exceeds a certain threshold according to climate projections.
-
-
