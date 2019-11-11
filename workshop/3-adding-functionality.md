@@ -1,8 +1,10 @@
 # Adding functionality to your TerriaMap
 
+
+
 So far, this workshop has gone through how to set up your own TerriaMap using functionality from the TerriaJS library. In this part you'll add a new custom kind of catalog item that can be used to drape an image onto the 3D terrain of the map.
 
-1) Find `ImageCatalogItem.ts` in the `lib/Models` folder. This is where you will put your code. If you don't know TypeScript, don't panic! Apart from some of the extra syntax for classes, you can more or less write ordinary old JavaScript. 
+1) Find `ImageCatalogItem.ts` in the `lib/Models` folder. This is where you will put your code. If you don't know TypeScript, don't panic! Apart from some of the extra syntax for classes, you can more or less write ordinary old JavaScript.
 
 You'll need to implement 2 functions: `get imageryProvider` and `get mapItems`.
 

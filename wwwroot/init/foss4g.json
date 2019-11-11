@@ -5,6 +5,7 @@
       "south": 36,
       "west": -20
     },
+    "viewerMode": "3dSmooth",
     "catalog": [
         {
           "type": "gtfs",
@@ -21,6 +22,32 @@
               "content": "[Creative Commons CCZero](https://opendefinition.org/licenses/cc-zero/)"
             }
           ]
-        }
+        },
+        {
+          "name": "Stamen watercolour map",
+          "type": "open-street-map",
+          "url": "http://{s}.tile.stamen.com/watercolor/",
+          "subdomains": ["a", "b", "c"],
+          "attribution": '<a href="http://openstreetmap.org">OpenStreetMap</a> Contributors and <a href="http://stamen.com">Stamen Design</a>',
+          "opacity": 1.0
+        },
+        {
+          "name": "Cesium Air",
+          "type": "gltf",
+          "url": "build/TerriaJS/test/gltf/Cesium_Air.glb",
+          "origin": {
+            "longitude": 174.8075,
+            "latitude": -41.317,
+            "height": 40.0
+          },
+          "upAxis": "Y",
+          "forwardAxis": "Z"
+        },
+        {
+          "name": "ArcGIS example",
+          "type": "esri-mapServer",
+          "url": "https://gis.wcc.govt.nz/arcgis/rest/services/Transportation/RailwayStations/MapServer/0"
+        },
+
     ]
   }

@@ -46,7 +46,7 @@
             "",
             "<a target=\"_blank\" href=\"https://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
             "",
-            '<img src="images/2019.png" style="width: 235px; padding-left:9px"/>'
+            "<h3>FOSS4G 2019 - Oceania</h3>"
         ],
         // Shown when things go wrong.
         supportEmail: "help@example.com",

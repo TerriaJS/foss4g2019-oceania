@@ -24,9 +24,6 @@ import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/BingMapsSearchP
 import render from './lib/Views/render';
 import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBaseMapOptions';
 import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
-import { autorun, reaction, runInAction } from 'mobx';
-import ImageCatalogItem from './lib/Models/ImageCatalogItem';
-
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -60,23 +57,14 @@ if (process.env.NODE_ENV !== "production" && module.hot) {
     document.styleSheets[0].disabled = true;
 }
 
-const shareDataService = new ShareDataService({
-  terria: terria
-});
-
-// Quick fix to sharing via remote server
-reaction(() => terria.configParameters.shareUrl, shareUrl => {
-  runInAction(() => {
-    shareDataService.url = shareUrl;
-  });
-});
-
 module.exports = terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
     // as well as the call to "updateApplicationOnHashChange" further down.
     applicationUrl: window.location,
     configUrl: 'config.json',
-    shareDataService
+    shareDataService: new ShareDataService({
+        terria: terria
+    })
 }).catch(function(e) {
     raiseErrorToUser(terria, e);
 }).finally(function() {
