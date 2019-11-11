@@ -1,19 +1,19 @@
 # Adding Web Map Service layers
 Terria's format support is far wider than just CSV. Let's add some WMS layers from an open data portal.
 
-1. Find a dataset with a WMS url on https://environment.data.gov.uk/ (searching for WMS brings up many)
+1. Find a dataset with a WMS url on https://catalogue.data.govt.nz/dataset?q=rail&res_format=OGC+WMS&sort=score+desc%2C+metadata_modified+desc (you could search for "trees", "rail" or similar)
 2. Add one of them to your catalog by adding the following catalog json:
 ```json
 {
 "type": "wms-group",
-"name": "Indicative Flood Risk Areas",
-"url": "https://environment.data.gov.uk/spatialdata/blue-square-grid/wms"
+"name": "Marlborough District Council - Notable Trees",
+"url": "https://gis.marlborough.govt.nz/server/services/OpenData/OpenData5/MapServer/WMSServer?request=GetCapabilities&service=WMS"
 }
 ```
-replacing the url portion with the URL you get when you click the "Copy link to clipboard" button listed beside the WMS service and choosing an appropriate name.
+replacing the url portion with the URL you get when you click on a dataset and click the OGC WMS distribution.
 
 3. Refresh your TerriaMap and add the new layer to your map.
-4. Click "Zoom to extent" in the workbench on the left. You might also have to zoom in more to see the data (the WMS services from this site seem reliable but require zooming in to cities to see data)
+4. Click "Zoom to extent" in the workbench on the left. You might also have to zoom in more to see the data.
 
 # Adding Open Steet Map layers
 
@@ -43,6 +43,8 @@ Yep. Terria supports those too. Add an ArcGIS example with the following:
   "url": "https://gis.wcc.govt.nz/arcgis/rest/services/Transportation/RailwayStations/MapServer/0"
 }
 ```
+
+There are also many ArcGIS datasets on https://catalogue.data.govt.nz/ that can be explored. You might need to navigate to the .../Mapserver/ url in your browser, check the layer numbers and add that layer number you want to end of the URL in your config to get the layer to show in Terria.
 
 # Adding a GLTF model
 
